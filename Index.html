@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.sliceWrapper {
+  position: relative;
+  border: 1px solid black;
+  padding: 0;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+}
+
+.slice {
+  position: absolute;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+}
+
+li {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+}
+
+li:first-child {
+  transform: rotate(0deg) skewY(162deg);
+}
+
+li:nth-child(2) {
+  transform: rotate(72deg) skewY(162deg);
+}
+
+li:nth-child(3) {
+  transform: rotate(144deg) skewY(162deg);
+}
+
+li:nth-child(4) {
+  transform: rotate(216deg) skewY(162deg);
+}
+
+li:nth-child(5) {
+  transform: rotate(288deg) skewY(162deg);
+}
+
+li:first-child .slice {
+  background: green;
+}
+
+li:nth-child(2) .slice {
+  background: tomato;
+}
+
+li:nth-child(3) .slice {
+  background: aqua;
+}
+
+li:nth-child(4) .slice {
+  background: yellow;
+}
+
+li:nth-child(5) .slice {
+  background: blue;
+}
+
+
+
+	
+#parent:hover .parent-highlight {
+    background-color: red;
+    color: white;
+}
+#thumb:hover{
+    opacity:0.5;
+}
+#thumb:hover .sliceWrapper
+{
+width:500px;
+height:500px;
+}
+ .chart {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 160px;
+  -moz-border-radius: 160px;
+  -webkit-border-radius: 160px;
+}
+
+#chart1 {
+  border-right: 160px solid red;
+  border-top: 160px solid transparent;
+  border-left: 160px solid transparent;
+  border-bottom: 160px solid transparent;
+}
+
+#chart2 {
+  border-right: 160px solid transparent;
+  border-top: 160px solid green;
+  border-left: 160px solid transparent;
+  border-bottom: 160px solid transparent;
+}
+
+#chart3 {
+  border-right: 160px solid transparent;
+  border-top: 160px solid transparent;
+  border-left: 160px solid blue;
+  border-bottom: 160px solid transparent;
+}
+
+#chart4 {
+  border-right: 160px solid transparent;
+  border-top: 160px solid transparent;
+  border-left: 160px solid transparent;
+  border-bottom: 160px solid yellow;
+}
+#chart:first-child:hover
+{
+margin-right:-30px;
+}
+#chart:nth-child(2):hover
+{
+margin-top:-30px;
+}
+#chart3:nth-child(3):hover
+{
+margin-left:-30px;
+}
+#chart4:nth-child(4):hover
+{
+margin-bottom:-30px;
+}
+.box-3d {
+	padding: 10px;
+	margin: 10px 5px 20px;
+
+	border-top: 1px solid #f4f4f2;
+
+	-ms-box-shadow: 0 7px 0 #BFBAAD, 0 0.5em 0 #A8A38C, 0 12px 12px #A8A38C;
+	-moz-box-shadow: 0 7px 0 #BFBAAD, 0 0.5em 0 #A8A38C, 0 12px 12px #A8A38C;
+	-o-box-shadow: 0 7px 0 #BFBAAD, 0 0.5em 0 #A8A38C, 0 12px 12px #A8A38C;
+	-webkit-box-shadow: 0 7px 0 #BFBAAD, 0 0.5em 0 #A8A38C, 0 12px 12px #A8A38C;
+	box-shadow: 0 7px 0 #BFBAAD, 0 0.5em 0 #A8A38C, 0 12px 12px #A8A38C;
+
+	-ms-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-o-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.squarewrapper
+{
+position: relative;
+    padding-bottom: 100%;
+    height: 0;
+}
+.squarewrapper .square {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.csscircle {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.circle5 .segment1 {
+    transform: rotate(72deg);
+    -ms-transform: rotate(72deg);
+    -moz-tranform: rotate(72deg);
+    -webkit-transform: rotate(72deg);
+    -o-transform: rotate(72deg);
+}
+.segmentwrapper {
+    position: absolute;
+    top: 49%;
+    left: 49%;
+    width: 2%;
+    height: 2%;
+}
+.circle5 .segment {
+    transform: skewX(18deg);
+    -ms-transform: skewX(18deg);
+    -moz-tranform: skewX(18deg);
+    -webkit-transform: skewX(18deg);
+    -o-transform: skewX(18deg);
+}
+.segment, .segment .inner {
+    position: absolute;
+    transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+}
+.segment {
+    bottom: 50%;
+    right: 50%;
+    width: 5000%;
+    height: 5000%;
+    overflow: hidden;
+    transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    -webkit-transform-origin: 0 100%;
+}
+.circle5 .segment1 .inner {
+    background: #d5e5e4;
+}
+.circle5 .segment .inner {
+    transform: skewX(-18deg);
+    -ms-transform: skewX(-18deg);
+    -moz-tranform: skewX(-18deg);
+    -webkit-transform: skewX(-18deg);
+    -o-transform: skewX(-18deg);
+}
+.segment .inner {
+    right: -50%;
+    bottom: -50%;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    border-radius: 100%;
+    transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    cursor: pointer;
+}
+.circle5 .segment2 {
+    transform: rotate(144deg);
+    -ms-transform: rotate(144deg);
+    -moz-tranform: rotate(144deg);
+    -webkit-transform: rotate(144deg);
+    -o-transform: rotate(144deg);
+}
+.circle5 .segment2 .inner {
+    background: #d7d193;
+}
+.circle5 .segment3 {
+    transform: rotate(216deg);
+    -ms-transform: rotate(216deg);
+    -moz-tranform: rotate(216deg);
+    -webkit-transform: rotate(216deg);
+    -o-transform: rotate(216deg);
+}
+.circle5 .segment3 .inner {
+    background: #96814a;
+}
+.circle5 .segment4 {
+    transform: rotate(288deg);
+    -ms-transform: rotate(288deg);
+    -moz-tranform: rotate(288deg);
+    -webkit-transform: rotate(288deg);
+    -o-transform: rotate(288deg);
+}
+.circle5 .segment4 .inner {
+    background: #93c1d7;
+}
+.circle5 .segment5 {
+    transform: rotate(1turn);
+    -ms-transform: rotate(1turn);
+    -moz-tranform: rotate(1turn);
+    -webkit-transform: rotate(1turn);
+    -o-transform: rotate(1turn);
+}
+.circle5 .segment5 .inner {
+    background: #60a058;
+}
+.circle5 .segment .inner:hover {
+    transform: skewX(-18deg) scale(1.1);
+    -ms-transform: skewX(-18deg) scale(1.1);
+    -moz-tranform: skewX(-18deg) scale(1.1);
+    -webkit-transform: skewX(-18deg) scale(1.1);
+    -o-transform: skewX(-18deg) scale(1.1);
+}
+
+</style>
+</head>
+<body>
+<!-- Write your comments here
+<section>
+<div id="parent">
+    <ul class="sliceWrapper">
+  <li id="thumb">
+    <div class="slice"></div>
+  </li>
+  <li>
+    <div class="slice"></div>
+  </li>
+  <li>
+    <div class="slice"></div>
+  </li>
+  <li>
+    <div class="slice"></div>
+  </li>
+  <li>
+    <div class="slice"></div>
+  </li>
+  
+</ul>
+    <div class="parent-highlight">I get highlighted</div>
+</div>
+ </section>
+ -->
+ <section>
+
+    		
+		        <div class="squarewrapper">
+		        	<div class="square">
+						<div class="csscircle circle5">
+							<div class="segmentwrapper segment1">
+								<div class="segment"><div class="inner"></div></div>
+							</div>
+							<div class="segmentwrapper segment2">
+								<div class="segment"><div class="inner"></div></div>
+							</div>
+							<div class="segmentwrapper segment3">
+								<div class="segment"><div class="inner"></div></div>
+							</div>
+							<div class="segmentwrapper segment4">
+								<div class="segment"><div class="inner"></div></div>
+							</div>
+							<div class="segmentwrapper segment5">
+								<div class="segment"><div class="inner"></div></div>
+							</div>
+						</div>
+		        	</div>
+		        </div>
+		   
+  </section>
+</body>
+</html>
